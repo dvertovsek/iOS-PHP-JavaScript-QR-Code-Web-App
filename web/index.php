@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="hr">
   <head>
-    <title>Bootstrap Example</title>
+    <title>WhatsCrap Web</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
