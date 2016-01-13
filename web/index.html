@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-
-    <script src="header.js"></script>
   </head>
   <body>
     <div class="container">
@@ -20,16 +18,18 @@
 </html>
 
 <script>
-  $(document).ready(function() {
-    var code = generateCode(30);
+  var code = "";
 
-    $.get( "http://whatscrap-dare1234.rhcloud.com/api/newcode/?newcode="+code, function( data ) {
+  $(document).ready(function() {
+    code = generateCode(30);
+
+    $.get( "api/newcode/"+code, function( data ) {
       var obj = jQuery.parseJSON( data );
 
       var html = "";
       if(obj.status == 200)
       {
-        html = "<img src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data="+code+"' title='"+code+"' alt='"+code+"'>";
+        html = "<img src='https://api.qrserver.com/v1/create-qr-code/?size=250x250&data="+code+"' title='"+code+"' alt='qr'>";
       }
       else{
         html = "<div class='alert alert-danger' role='alert'>Error generating QR</div>";
@@ -40,4 +40,26 @@
 
     setInterval(checkForCodeScanned, 5000);
   });
+
+
+  function generateCode(length) {
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJLKMNOPQRSTUVWXYZ0123456789";
+    var code = "";
+    for (i = 0; i < length; i++)
+    {
+      var item = chars[Math.floor(Math.random()*chars.length)];
+      code += item;
+    }
+    return code;
+  }
+
+  function checkForCodeScanned(){
+    $.get( "api/checkscanned/"+code, function( data ) {
+      var obj = jQuery.parseJSON( data );
+      if(obj.username != 100)
+      {
+        window.location = "login/"+obj.username;
+      }
+    });
+  }
 </script>

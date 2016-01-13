@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule login/([a-zA-Z0-9]+)$ login.php?user=$1 [nc,qsa]
