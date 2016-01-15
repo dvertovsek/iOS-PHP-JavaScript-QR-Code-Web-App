@@ -1,3 +1,6 @@
 RewriteEngine on
 RewriteRule newcode/([a-zA-Z0-9]+)$ newcode.php?newcode=$1 [nc,qsa]
 RewriteRule checkscanned/([a-zA-Z0-9]+)$ checkscanned.php?code=$1 [nc,qsa]
+RewriteRule scancode/([a-zA-Z0-9]+)$ scancode.php?code=$1 [nc,qsa]
+
+RewriteRule newuser newuser.php
