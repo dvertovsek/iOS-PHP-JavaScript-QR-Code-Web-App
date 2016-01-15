@@ -37,8 +37,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RfR-Rz-eja">
                                 <rect key="frame" x="0.0" y="72" width="600" height="528"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fB4-eW-VtW">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dZe-jk-kL1">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="LYI-2n-GzD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fB4-eW-VtW">
+                                        <rect key="frame" x="0.0" y="30" width="600" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="zij-np-2cB"/>
                                         </constraints>
@@ -46,7 +54,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="last name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uJQ-6H-YGh">
-                                        <rect key="frame" x="0.0" y="30" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="60" width="600" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="goS-XM-qNX"/>
                                         </constraints>
@@ -54,7 +62,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Wd-7E-YiL">
-                                        <rect key="frame" x="0.0" y="60" width="600" height="30"/>
+                                        <rect key="frame" x="0.0" y="90" width="600" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="cT3-J7-DkE"/>
                                         </constraints>
@@ -62,7 +70,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EDI-01-cc5">
-                                        <rect key="frame" x="0.0" y="90" width="600" height="438"/>
+                                        <rect key="frame" x="0.0" y="120" width="600" height="408"/>
                                         <color key="backgroundColor" red="0.86236777795192621" green="1" blue="0.74529660069114945" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                         <state key="normal" title="Continue"/>
@@ -86,6 +94,7 @@
                         <outlet property="firstNameTxtField" destination="fB4-eW-VtW" id="kby-zp-ePg"/>
                         <outlet property="lastNameTxtField" destination="uJQ-6H-YGh" id="Jqm-c0-AdL"/>
                         <outlet property="locationTextField" destination="3Wd-7E-YiL" id="hpC-NX-Yfr"/>
+                        <outlet property="usernameTxtField" destination="dZe-jk-kL1" id="RiZ-MU-6rU"/>
                         <segue destination="uUH-Jl-b9x" kind="show" identifier="showViewController" id="tVy-QN-sWM"/>
                     </connections>
                 </viewController>
