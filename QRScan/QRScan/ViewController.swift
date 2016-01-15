@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 import QRCodeReader
+import Alamofire
 class ViewController: UIViewController {
     
     lazy var reader = QRCodeReaderViewController(metadataObjectTypes: [AVMetadataObjectTypeQRCode])
@@ -39,12 +40,18 @@ extension ViewController: QRCodeReaderViewControllerDelegate
 {
     
     func reader(reader: QRCodeReaderViewController, didScanResult result: QRCodeReaderResult) {
-        print(result)
+        print("procitan qr kod")
+        print(result.value)
+        
+        Alamofire.request(.POST, "https://whatscrap-dare1234.rhcloud.com/scancode/"+result.value, parameters: nil)
+            .responseJSON { response in
+                print("web page opened")
+        }
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func readerDidCancel(reader: QRCodeReaderViewController) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+//        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
 
